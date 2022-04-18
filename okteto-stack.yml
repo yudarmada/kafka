@@ -15,7 +15,22 @@ spec:
       containers:
       - image: bitnami/kafka
         name: kafka
-
+        env:
+        - name: KAFKA_CFG_ZOOKEEPER_CONNECT
+          value: "zookeeper:2181"
+        - name: ALLOW_PLAINTEXT_LISTENER
+          value: "yes"
+        - name: KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE
+          value: "true"    
+        - name: KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP
+          value: "CLIENT:PLAINTEXT,EXTERNAL:PLAINTEXT"
+        - name: KAFKA_CFG_LISTENERS
+          value: "CLIENT://:9092,EXTERNAL://:9093"
+        - name: KAFKA_CFG_ADVERTISED_LISTENERS
+          value: "CLIENT://kafka:9092,EXTERNAL://kafka:9093"  
+        - name: KAFKA_INTER_BROKER_LISTENER_NAME
+          value: "CLIENT"
+          
 ---
 
 apiVersion: v1
