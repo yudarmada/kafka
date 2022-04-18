@@ -27,7 +27,7 @@ spec:
         - name: KAFKA_CFG_LISTENERS
           value: "CLIENT://:9092,EXTERNAL://:9093"
         - name: KAFKA_CFG_ADVERTISED_LISTENERS
-          value: "CLIENT://kafka:9092,EXTERNAL://kafka:9093"  
+          value: "CLIENT://kafka:9092,EXTERNAL://localhost:9093"  
         - name: KAFKA_INTER_BROKER_LISTENER_NAME
           value: "CLIENT"
           
