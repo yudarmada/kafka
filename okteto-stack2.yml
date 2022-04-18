@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka-ui
+  template:
+    metadata:
+      labels:
+        app: kafka-ui
+    spec:
+      containers:
+      - image: provectuslabs/kafka-ui
+        name: kafka-ui
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: kafka-ui
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+spec:
+  type: LoadBalancer  
+  ports:
+  - name: "kafka-ui"
+    port: 8000
+  selector:
+    app: kafka-ui
