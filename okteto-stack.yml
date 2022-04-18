@@ -28,6 +28,6 @@ spec:
   type: LoadBalancer  
   ports:
   - name: "kafka"
-    port: 80
+    port: 9093
   selector:
     app: kafka
