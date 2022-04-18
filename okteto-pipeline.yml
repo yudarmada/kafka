@@ -1,4 +1,5 @@
 icon: https://apps.okteto.com/movies/icon.png
 deploy:
+  - kubectl apply -f zookerper-stack.yml
   - kubectl apply -f okteto-stack.yml
   - kubectl apply -f okteto-stack2.yml
