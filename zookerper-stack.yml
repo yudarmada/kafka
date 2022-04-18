@@ -16,8 +16,8 @@ spec:
       - image: bitnami/zookeeper
         name: zookeeper
         env:
-      - name: ALLOW_ANONYMOUS_LOGIN
-        value: "yes"
+        - name: ALLOW_ANONYMOUS_LOGIN
+          value: "yes"
 
 ---
 
