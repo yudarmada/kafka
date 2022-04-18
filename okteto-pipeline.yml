@@ -1,0 +1,5 @@
+icon: https://apps.okteto.com/movies/icon.png
+deploy:
+  - helm install my-kafka bitnami/kafka
+  - helm repo add kafka-ui https://provectus.github.io/kafka-ui
+  - helm install my-kafka-ui kafka-ui/kafka-ui --version 0.3.3
