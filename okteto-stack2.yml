@@ -15,6 +15,13 @@ spec:
       containers:
       - image: provectuslabs/kafka-ui
         name: kafka-ui
+        env:
+        - name: ALLOW_ANONYMOUS_LOGIN
+          value: "yes"
+        - name: KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS
+          value: "kafka:9093"
+        - name: KAFKA_CLUSTERS_0_ZOOKEEPER
+          value: "zookeeper:2181"  
 
 ---
 
@@ -28,6 +35,6 @@ spec:
   type: LoadBalancer  
   ports:
   - name: "kafka-ui"
-    port: 8000
+    port: 8080
   selector:
     app: kafka-ui
