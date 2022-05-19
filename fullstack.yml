@@ -116,7 +116,7 @@ kind: Service
 metadata:
   name: zookeeper
 spec:
-  type: LoadBalancer  
+  type: NodePort  
   ports:
   - name: "zookeeper"
     port: 2181
